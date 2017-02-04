@@ -22,6 +22,7 @@ gem 'devise'
 gem 'react-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'omniauth-github'
+gem 'yelp', require: 'yelp'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

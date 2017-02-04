@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   root 'static_pages#about'
+  get 'search' => 'static_pages#search'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
