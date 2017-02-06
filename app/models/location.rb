@@ -3,8 +3,8 @@ class Location < ActiveRecord::Base
 
   validates :yelp_id, presence: true
 
-  def self.get_locations(location)
-    search_params = { term: 'dog park', limit: 10 }    
+  def self.get_locations(location, user)
+    search_params = { term: 'dog park', limit: 10 }
     full_responses = Yelp.client.search(location, search_params)
     full_businesses = full_responses.businesses
     selected_responses = []
@@ -19,6 +19,7 @@ class Location < ActiveRecord::Base
       selected_response[:address] = r.location.display_address
       selected_response[:yelp_url] = r.url
       selected_response[:guest_count] = count_for(r.id)
+      selected_response[:user_going] = is_user_going?(r.id, user)
       selected_responses.push(selected_response)
     end
     return selected_responses
@@ -31,6 +32,19 @@ class Location < ActiveRecord::Base
     else
       return 0
     end    
+  end
+
+  def self.is_user_going?(yelp_id, user)
+    if user
+      location = Location.find_by(yelp_id: yelp_id)
+      if location
+        return location.attendances.exists?(user_id: user.id)
+      else
+        false
+      end
+    else
+      return false
+    end
   end
 
 end

@@ -7,12 +7,16 @@ class Attendance < ActiveRecord::Base
   def self.add_one(yelp_id, user_id)
     location = Location.find_by(yelp_id: yelp_id)
     if location
-      Attendance.create(location_id: location.id, user_id: user_id)
-      return location.attendances.count
+      attendance = Attendance.create(location_id: location.id, user_id: user_id)
+      if attendance.valid?
+        return location.attendances.count
+      else 
+        return nil
+      end
     else
       location = Location.create(yelp_id: yelp_id)
       attendance = Attendance.create(location_id: location.id, user_id: user_id)
-      if attendance.save?
+      if attendance.valid?
         return 1
       else
         return nil

@@ -17,7 +17,7 @@ var About=React.createClass({
     })
   },
   handleSearchLocation: function(){
-    self = this;
+    var self = this;
     $.ajax(
       {
         url: '/search',
@@ -26,7 +26,7 @@ var About=React.createClass({
           location: this.state.locationString
         },
         success: function(response){
-          console.log('success!', response);
+          //console.log('success!', response);
           self.setState(
             {locations: response.search_result}
           )
@@ -36,7 +36,6 @@ var About=React.createClass({
         }
       }
     )
-
   },
   render: function() {
     var locations = null;

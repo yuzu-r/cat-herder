@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'static_pages#about'
   get 'search' => 'static_pages#search'
   post 'add' => 'static_pages#add_to_location'
-  post 'delete' => 'static_pages#remove_from_location'
+  post 'remove' => 'static_pages#remove_from_location'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -6,7 +6,8 @@ class StaticPagesController < ApplicationController
 
   def search
     location = params[:location]
-    locations = Location.get_locations(location)
+    locations = Location.get_locations(location, current_user) 
+    # we might not have current_user, so pass this way instead of passing id
     render json: {:search_result => locations, status: :success}
   end
 
@@ -32,7 +33,7 @@ class StaticPagesController < ApplicationController
     
   private
     def attendance_params
-      params.require(:attendance).permit(:yelp_id)
+      params.permit(:yelp_id)
     end
   
 end
