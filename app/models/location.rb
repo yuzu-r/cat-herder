@@ -4,7 +4,7 @@ class Location < ActiveRecord::Base
   validates :yelp_id, presence: true
 
   def self.get_locations(location, user)
-    search_params = { term: 'dog park', limit: 10 }
+    search_params = { term: 'dog park', limit: 12, category_filter: 'dog_parks' }
     full_responses = Yelp.client.search(location, search_params)
     full_businesses = full_responses.businesses
     selected_responses = []

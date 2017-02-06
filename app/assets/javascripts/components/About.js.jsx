@@ -8,6 +8,33 @@ var About=React.createClass({
       }
     )
   },
+  componentDidMount: function(){
+    if (this.props.storedLocationString){
+      this.setState({
+        locationString: this.props.storedLocationString,
+        validLocation: true}
+      );
+      var self = this;
+      $.ajax(
+        {
+          url: '/search',
+          type: 'GET',
+          data: {
+            location: this.props.storedLocationString
+          },
+          success: function(response){
+            //console.log('success!', response);
+            self.setState(
+              {locations: response.search_result}
+            )
+          },
+          error: function(response){
+            console.log('error!', response.responseText);
+          }
+        }
+      )     
+    }
+  },
   handleLocationEntry: function(e){
     var locationString = e.target.value;
     var validLocationString = locationString.trim().length > 1 
