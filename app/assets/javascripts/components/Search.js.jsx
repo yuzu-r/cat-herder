@@ -3,6 +3,7 @@ var Search = React.createClass({
     return(
       <div className='img-container'>
         <h2 className='search-title'>Wanna play?</h2>
+        <h5 className='search-subtitle'>Find dog parks.</h5>
         <h5 className='search-subtitle'>Round up your fellow owners.</h5>
         <div className='input-group search-group'>
           <div className='input-group-btn'>

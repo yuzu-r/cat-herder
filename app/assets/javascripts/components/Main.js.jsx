@@ -80,6 +80,7 @@ var Main=React.createClass({
                 onSearchLocation={this.handleSearchLocation}
                 validLocation={this.state.validLocation} />
         {locations}
+        <Footer />
       </div>
     )
   }
