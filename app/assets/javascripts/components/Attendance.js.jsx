@@ -3,14 +3,14 @@ var Attendance = React.createClass({
     var includeUserText='';
     if (this.props.userGoing){
       includeUserText = 
-      <span>, including you
-        <button className='btn btn-link'
+      <span>, including you&nbsp;
+        <button className='btn btn-danger btn-sm'
                 onClick={this.props.handleRemove}>cancel plans</button>
       </span>;
     }
     else {
       includeUserText = <span>&nbsp;
-        <button className='btn btn-link'
+        <button className='btn btn-primary btn-sm'
                 onClick={this.props.handleAdd}>I plan to go!</button>
       </span>;
     }
