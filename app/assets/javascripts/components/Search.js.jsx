@@ -5,6 +5,9 @@ var Search = React.createClass({
         <h2 className='search-title'>Wanna play?</h2>
         <h5 className='search-subtitle'>Find dog parks.</h5>
         <h5 className='search-subtitle'>Round up your fellow owners.</h5>
+        <h5 className='search-subtitle'>
+          <a href='/about'>More info...</a>
+        </h5>
         <div className='input-group search-group'>
           <div className='input-group-btn'>
             <button 

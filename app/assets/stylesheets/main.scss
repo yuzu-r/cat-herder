@@ -45,6 +45,14 @@ hr.star-style:after {
   position: relative;
 }
 
+.about-img-container {
+  background-image: image-url("dog_with_stick.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 215px;
+  background-position: center top;
+}
+
 .navbar-brand{
   font-family: 'Sniglet', cursive;
   color: white;
@@ -95,5 +103,12 @@ hr.star-style:after {
 }
 
 .navbar-inverse .navbar-brand:hover {
+  color: silver;
+}
+
+h5 > a {
+  color: white;
+}
+h5 > a:hover {
   color: silver;
 }

@@ -18,6 +18,7 @@
 //= require components
 //= require_tree .
 //= require bootstrap-sprockets
+//= require ./vendor/polyfill.js
 ReactRailsUJS.handleEvent('turbolinks:before-cache', function() {
   window.ReactRailsUJS.unmountComponents();
 });
