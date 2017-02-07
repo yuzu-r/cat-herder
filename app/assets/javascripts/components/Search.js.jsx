@@ -7,7 +7,7 @@ var Search = React.createClass({
         <div className='input-group search-group'>
           <div className='input-group-btn'>
             <button 
-                id='myne'
+                id='search-btn'
                 className='btn btn-primary'
                 onClick={this.props.onSearchLocation}
                 disabled={!this.props.validLocation}>

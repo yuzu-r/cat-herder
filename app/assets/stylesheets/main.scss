@@ -47,6 +47,7 @@ hr.star-style:after {
 
 .navbar-brand{
   font-family: 'Sniglet', cursive;
+  color: white;
 }
 
 .search-group{
@@ -61,10 +62,38 @@ hr.star-style:after {
   padding-top: 16px;
 }
 
-#myne{
+#search-btn{
   background-color: #583A14;
 }
 
-#myne:focus{
+#search-btn:focus{
   border-color: white;
+}
+
+#search-btn:disabled{
+  opacity:0.8;
+}
+
+.navbar{
+  background-color: #583A14;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+  color: silver;
+}
+
+.navbar-inverse .navbar-text{
+  color: white;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse .navbar-brand:hover {
+  color: silver;
 }
