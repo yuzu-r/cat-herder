@@ -1,9 +1,9 @@
-class StaticPagesController < ApplicationController
+class LocationsController < ApplicationController
   before_action :authenticate_user!, only: [:add_to_location, :remove_from_location]
-  def about   
+  def main   
     location_string = session[:location_string]
     session[:location_string] = nil
-    render component: 'About', props: {current_user: current_user, storedLocationString: location_string }
+    render component: 'Main', props: {current_user: current_user, storedLocationString: location_string }
   end
 
   def search

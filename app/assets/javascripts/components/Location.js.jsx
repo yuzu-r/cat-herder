@@ -40,7 +40,7 @@ var Location = React.createClass({
           yelp_id: this.props.locationData.yelp_id
         },
         success: function(response){
-          console.log('success!', response);
+          //console.log('success!', response);
           var newCount = self.state.guestCount - 1;
           self.setState(
             {guestCount: newCount,
