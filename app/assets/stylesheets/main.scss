@@ -1,3 +1,70 @@
+
+h4 {
+  font-family: 'Sniglet', cursive;
+}
+
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+.location {
+  margin: 16px auto;
+  padding-right: 6px;
+}
+
 .location-image{
   float: left;
+  margin-right:10px;
+}
+
+.location-text{
+  padding-left: 6px;
+}
+
+hr.star-style {
+  border-top: 1px solid #8c8b8b;
+  text-align: center;
+}
+hr.star-style:after {
+  content: '\00273c';
+  display: inline-block;
+  position: relative;
+  top: -17px;
+  padding: 5px 5px;
+  background: #ffffff;
+  color: #8c8b8b;
+  font-size: 18px;
+}
+
+.img-container {
+  background-image: image-url("jack_russell.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 400px;
+  background-position: center top;
+  position: relative;
+}
+
+.navbar-brand{
+  font-family: 'Sniglet', cursive;
+}
+
+.search-group{
+  position: absolute;
+  bottom: 0;
+}
+
+.search-title, .search-subtitle{
+  color: white;
+  font-family: 'Sniglet', cursive;
+  padding-left: 16px;
+  padding-top: 16px;
+}
+
+#myne{
+  background-color: #583A14;
+}
+
+#myne:focus{
+  border-color: white;
 }

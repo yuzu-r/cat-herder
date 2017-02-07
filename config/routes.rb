@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   get 'search' => 'static_pages#search'
   post 'add' => 'static_pages#add_to_location'
   post 'remove' => 'static_pages#remove_from_location'
-  #get 'about' => 'static_pages#about'
 end

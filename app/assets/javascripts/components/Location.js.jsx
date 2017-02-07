@@ -9,7 +9,7 @@ var Location = React.createClass({
     )
   },
   handleAdd: function(){
-    console.log('adding to guest count');
+    //console.log('adding to guest count');
     var self = this;
     $.ajax({
         url: '/add',
@@ -31,7 +31,7 @@ var Location = React.createClass({
     })
   },
   handleRemove: function(){
-    console.log('removing from guest count');
+    //console.log('removing from guest count');
     var self = this;
     $.ajax({
         url: '/remove',
@@ -63,7 +63,7 @@ var Location = React.createClass({
                                userGoing={this.state.userGoing} />
     }
     else {
-      attendance = <span>Log in to see if any good dogs will be here</span>
+      attendance = <span>Log in to see the paw count for this park</span>
     }
     if (this.props.locationData.address.length === 0){
       var addressString = '';  
@@ -72,12 +72,13 @@ var Location = React.createClass({
       addressString = this.props.locationData.address.join(', ');
     }
     return (
-      <div>
+      <div className='location'>
         <h4>{this.props.locationData.name}<small>&nbsp;&nbsp;{attendance}</small></h4>
         <img className='location-image' src={this.props.locationData.image_url} />
-        <p>{addressString}</p>
-        <p>{this.props.locationData.rating} out of 5 rating on {this.props.locationData.review_count} reviews.</p>        
+        <p className='location-text'>{addressString}</p>
+        <p>{this.props.locationData.rating} out of 5 rating on {this.props.locationData.review_count} Yelp reviews.</p>        
         <p>{this.props.locationData.snippet_text} <a href={this.props.locationData.yelp_url} target="_blank">(more on Yelp)</a></p>     
+        <hr className='star-style' />
         <div className='clearfix'></div>
       </div>
     )
