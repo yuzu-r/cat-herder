@@ -1,3 +1,114 @@
+
+h4 {
+  font-family: 'Sniglet', cursive;
+}
+
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+.location {
+  margin: 16px auto;
+  padding-right: 6px;
+}
+
 .location-image{
   float: left;
+  margin-right:10px;
+}
+
+.location-text{
+  padding-left: 6px;
+}
+
+hr.star-style {
+  border-top: 1px solid #8c8b8b;
+  text-align: center;
+}
+hr.star-style:after {
+  content: '\00273c';
+  display: inline-block;
+  position: relative;
+  top: -17px;
+  padding: 5px 5px;
+  background: #ffffff;
+  color: #8c8b8b;
+  font-size: 18px;
+}
+
+.img-container {
+  background-image: image-url("jack_russell.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 400px;
+  background-position: center top;
+  position: relative;
+}
+
+.about-img-container {
+  background-image: image-url("dog_with_stick.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 215px;
+  background-position: center top;
+}
+
+.navbar-brand{
+  font-family: 'Sniglet', cursive;
+  color: white;
+}
+
+.search-group{
+  position: absolute;
+  bottom: 0;
+}
+
+.search-title, .search-subtitle{
+  color: white;
+  font-family: 'Sniglet', cursive;
+  padding-left: 16px;
+  padding-top: 16px;
+}
+
+#search-btn{
+  background-color: #583A14;
+}
+
+#search-btn:focus{
+  border-color: white;
+}
+
+#search-btn:disabled{
+  opacity:0.8;
+}
+
+.navbar{
+  background-color: #583A14;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+  color: silver;
+}
+
+.navbar-inverse .navbar-text{
+  color: white;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+
+.navbar-inverse .navbar-brand:hover {
+  color: silver;
+}
+
+h5 > a {
+  color: white;
+}
+h5 > a:hover {
+  color: silver;
 }

@@ -1,9 +1,9 @@
-class StaticPagesController < ApplicationController
+class LocationsController < ApplicationController
   before_action :authenticate_user!, only: [:add_to_location, :remove_from_location]
-  def about   
+  def main   
     location_string = session[:location_string]
     session[:location_string] = nil
-    render component: 'About', props: {current_user: current_user, storedLocationString: location_string }
+    render component: 'Main', props: {current_user: current_user, storedLocationString: location_string }
   end
 
   def search
@@ -12,9 +12,13 @@ class StaticPagesController < ApplicationController
       session[:location_string] = params[:location]
     end
     location = params[:location]
-    locations = Location.get_locations(location, current_user) 
-    # we might not have current_user, so pass this way instead of passing id
-    render json: {:search_result => locations, status: :success}
+    status, locations = Location.get_locations(location, current_user) 
+    if status
+      render json: {:search_result => locations, status: :success}  
+    else
+      render json: {:search_result => locations, status: :unprocessable_entity}  
+    end
+    
   end
 
   def add_to_location
@@ -35,6 +39,10 @@ class StaticPagesController < ApplicationController
     else
       render json: {:guest_count => response, status: :error}
     end
+  end
+
+  def about
+    render component: 'About'
   end
     
   private
