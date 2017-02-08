@@ -16,7 +16,7 @@ var About = React.createClass({
           Yelp for places specifically designated as dog parks.</p>
         <h4>About Dogs With Friends</h4>
         <p>DwF uses Rails and React.js (via react-rails).</p>
-        <p>This is a <a href='http://www.freecodecamp.com'>freeCodeCamp</a> project built by <a href='https://s.codepen.io/yuzu-r/debug/KMWNOo/bYrdyYxogGKA'>yuzu-r</a>.</p>
+        <p>This is a <a href='http://www.freecodecamp.com' target='_blank'>freeCodeCamp</a> project built by <a href='https://s.codepen.io/yuzu-r/debug/KMWNOo/bYrdyYxogGKA' target='_blank'>yuzu-r</a>.</p>
       </div>      
     )
   }
