@@ -1,28 +1,7 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+FreeCodeCamp's original assignment is to create a "Nightlife Coordination App." This is my version: an app that can search Yelp for nearby dog parks and coordinate between authenticated users to see where your dog owner friends are planning to take their dogs.
 
-Things you may want to cover:
+A rails backend with React.js. Authentication by Devise.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This is part of freeCodeCamp's Backend Development curriculum. Visit at https://www.freecodecamp.com.
