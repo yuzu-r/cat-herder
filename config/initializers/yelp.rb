@@ -7,6 +7,9 @@ require 'yelp/fusion'
 #  config.token_secret = ENV['yelp_token_secret']
 #end
 
+puts "WTF!"
+puts ENV['YELP_API_KEY']
+puts "END"
 Yelp::Fusion.client.configure do |config|
 	config.api_key = ENV['YELP_API_KEY']
 end
