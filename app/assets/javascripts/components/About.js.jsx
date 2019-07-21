@@ -1,5 +1,5 @@
-var About = React.createClass({
-  render: function(){
+class About extends React.Component {
+  render() {
     return (
       <div className='col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3'>
         <div className='about-img-container'></div>
@@ -20,4 +20,4 @@ var About = React.createClass({
       </div>      
     )
   }
-})
+}

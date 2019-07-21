@@ -1,4 +1,5 @@
-class Location < ActiveRecord::Base
+#class Location < ActiveRecord::Base
+class Location < ApplicationRecord
   has_many :attendances
 
   validates :yelp_id, presence: true
@@ -7,7 +8,7 @@ class Location < ActiveRecord::Base
     search_params = { term: 'dog park', limit: 12, category_filter: 'dog_parks' }
     
     begin
-      full_responses = Yelp.client.search(location, search_params)
+      full_responses = Yelp::Fusion.client.search(location, search_params)
       full_businesses = full_responses.businesses
       selected_responses = []
       full_businesses.each do |r|
@@ -17,7 +18,7 @@ class Location < ActiveRecord::Base
         selected_response[:image_url] = r.image_url
         selected_response[:rating] = r.rating
         selected_response[:review_count] = r.review_count
-        selected_response[:snippet_text] = r.snippet_text
+        #selected_response[:snippet_text] = r.snippet_text
         selected_response[:address] = r.location.display_address
         selected_response[:yelp_url] = r.url
         selected_response[:guest_count] = count_for(r.id)

@@ -1,15 +1,16 @@
-var Main=React.createClass({
-  getInitialState: function() {
-    return (
-      {
-        locationString: '',
-        validLocation: false,
-        locations: [],
-        notice: ''
-      }
-    )
-  },
-  componentDidMount: function(){
+class Main extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      locationString: '',
+      validLocation: false,
+      locations: [],
+      notice: ''
+    }
+    this.handleLocationEntry = this.handleLocationEntry.bind(this);
+    this.handleSearchLocation = this.handleSearchLocation.bind(this);
+  }
+  componentDidMount(){
     if (this.props.storedLocationString){
       this.setState(
         {
@@ -17,17 +18,17 @@ var Main=React.createClass({
           validLocation: true
         },
         this.handleSearchLocation);
-    }     
-  },
-  handleLocationEntry: function(e){
+    }
+  }
+  handleLocationEntry(e){
     var locationString = e.target.value;
     var validLocationString = locationString.trim().length > 1 
     this.setState({
       locationString: locationString,
       validLocation: validLocationString
     })
-  },
-  handleSearchLocation: function(){
+  }
+  handleSearchLocation(){
     var self = this;
     $.ajax(
       {
@@ -61,8 +62,8 @@ var Main=React.createClass({
         }
       }
     )
-  },
-  render: function() {
+  }
+  render() {
     var locations = null;
     if (this.state.locations.length > 0) {
       var isLoggedIn = this.props.current_user !== null;
@@ -84,4 +85,4 @@ var Main=React.createClass({
       </div>
     )
   }
-})
+}

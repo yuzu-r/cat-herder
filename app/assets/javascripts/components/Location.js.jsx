@@ -1,14 +1,15 @@
-var Location = React.createClass({
-  getInitialState: function(){
-    return (
-      {
-        showAttendance: false,
-        guestCount: this.props.locationData.guest_count,
-        userGoing: this.props.locationData.user_going
-      }
-    )
-  },
-  handleAdd: function(){
+class Location extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      showAttendance: false,
+      guestCount: this.props.locationData.guest_count,
+      userGoing: this.props.locationData.user_going    
+    }
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
+  }
+  handleAdd(){
     //console.log('adding to guest count');
     var self = this;
     $.ajax({
@@ -28,9 +29,9 @@ var Location = React.createClass({
         error: function(response){
           console.log('error!', response.responseText);
         }
-    })
-  },
-  handleRemove: function(){
+    })  
+  }
+  handleRemove() {
     //console.log('removing from guest count');
     var self = this;
     $.ajax({
@@ -52,8 +53,8 @@ var Location = React.createClass({
           console.log('error!', response.responseText);
         }
     })
-  },
-  render: function(){
+  }
+  render(){
     //console.log(this.props);
     var attendance = null;
     if (this.props.isLoggedIn) {
@@ -72,15 +73,23 @@ var Location = React.createClass({
       addressString = this.props.locationData.address.join(', ');
     }
     return (
-      <div className='location'>
-        <h4>{this.props.locationData.name}<small>&nbsp;&nbsp;{attendance}</small></h4>
-        <img className='location-image' src={this.props.locationData.image_url} />
-        <p className='location-text'>{addressString}</p>
-        <p>{this.props.locationData.rating} out of 5 rating on {this.props.locationData.review_count} Yelp reviews.</p>        
-        <p>{this.props.locationData.snippet_text} <a href={this.props.locationData.yelp_url} target="_blank">(more on Yelp)</a></p>     
+      <div>
+        <div className='row'>
+          <div className='col-md-3'>
+            <img className='img-responsive' src={this.props.locationData.image_url} />
+          </div>
+          <div className='col-md-9'>
+            <h4>
+              {this.props.locationData.name}<small>&nbsp;&nbsp;{attendance}</small>
+            </h4>
+            <p className='location-text'>{addressString}</p>
+            <p>{this.props.locationData.rating} out of 5 rating on {this.props.locationData.review_count} Yelp reviews.</p>        
+            <p>{this.props.locationData.snippet_text} <a href={this.props.locationData.yelp_url} target="_blank">(more on Yelp)</a></p>     
+          </div>
+        </div>
         <hr className='star-style' />
         <div className='clearfix'></div>
       </div>
     )
   }
-})
+}
