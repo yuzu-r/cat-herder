@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
+#ruby '2.5.5'
 
-gem 'rails', '4.2.6'
+gem 'rails', '5.0.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
@@ -22,7 +23,8 @@ gem 'devise'
 gem 'react-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'omniauth-github'
-gem 'yelp', require: 'yelp'
+#gem 'yelp', require: 'yelp'
+gem 'yelp-fusion', '0.3.pre.beta', require: 'yelp/fusion'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

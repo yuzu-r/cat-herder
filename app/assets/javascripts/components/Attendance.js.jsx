@@ -1,5 +1,5 @@
-var Attendance = React.createClass({
-  render: function() {
+class Attendance extends React.Component{
+  render() {
     var includeUserText='';
     if (this.props.userGoing){
       includeUserText = 
@@ -20,4 +20,4 @@ var Attendance = React.createClass({
       </span>
     )
   }
-})
+}

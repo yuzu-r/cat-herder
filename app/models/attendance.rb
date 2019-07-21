@@ -1,4 +1,5 @@
-class Attendance < ActiveRecord::Base
+#class Attendance < ActiveRecord::Base
+class Attendance < ApplicationRecord
   validates :location_id, presence: true
   belongs_to :location
   belongs_to :user

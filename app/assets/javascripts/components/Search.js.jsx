@@ -1,5 +1,5 @@
-var Search = React.createClass({
-  render: function() {
+class Search extends React.Component {
+  render() {
     return(
       <div className='img-container'>
         <h2 className='search-title'>Wanna play?</h2>
@@ -25,6 +25,6 @@ var Search = React.createClass({
           </input>
         </div>
       </div>
-    )
+    )  
   }
-})
+}

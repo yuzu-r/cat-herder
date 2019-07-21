@@ -1,14 +1,15 @@
-var Location = React.createClass({
-  getInitialState: function(){
-    return (
-      {
-        showAttendance: false,
-        guestCount: this.props.locationData.guest_count,
-        userGoing: this.props.locationData.user_going
-      }
-    )
-  },
-  handleAdd: function(){
+class Location extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      showAttendance: false,
+      guestCount: this.props.locationData.guest_count,
+      userGoing: this.props.locationData.user_going    
+    }
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
+  }
+  handleAdd(){
     //console.log('adding to guest count');
     var self = this;
     $.ajax({
@@ -28,9 +29,9 @@ var Location = React.createClass({
         error: function(response){
           console.log('error!', response.responseText);
         }
-    })
-  },
-  handleRemove: function(){
+    })  
+  }
+  handleRemove() {
     //console.log('removing from guest count');
     var self = this;
     $.ajax({
@@ -52,8 +53,8 @@ var Location = React.createClass({
           console.log('error!', response.responseText);
         }
     })
-  },
-  render: function(){
+  }
+  render(){
     //console.log(this.props);
     var attendance = null;
     if (this.props.isLoggedIn) {
@@ -83,4 +84,4 @@ var Location = React.createClass({
       </div>
     )
   }
-})
+}
